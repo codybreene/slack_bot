@@ -17,7 +17,7 @@ def fetch_phrases():
   return phrases
 
 # add phrase
-def add_phrase(phrase):
+def create_record(phrase):
   # ensure it's a string
   if type(phrase) is str:
     airtable_client.insert({'phrase': phrase})
@@ -25,7 +25,7 @@ def add_phrase(phrase):
     return "That doesn't look like a phrase..."
 
 # delete phrase
-def delete_phrase(phrase):
+def delete_record(phrase):
   if phrase in fetch_phrases():
     airtable_client.delete_by_field('phrase', phrase)
   else:
