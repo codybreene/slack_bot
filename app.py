@@ -73,7 +73,7 @@ def delete_phrase():
   watch_phrases = fetch_phrases()
   if phrase in watch_phrases:
     delete_record(phrase)
-    return Response(f'You deleted a phrase: {phrase} All phrases: {watch_phrases}')
+    return Response(f'You deleted a phrase: {phrase}')
   else:
     return Response("That's not a watch-phrase")
 
