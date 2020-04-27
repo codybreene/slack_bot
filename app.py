@@ -1,5 +1,6 @@
 import os
 import logging
+import dotenv
 logging.basicConfig(level=logging.DEBUG)
 
 from flask import Flask, request, Response
@@ -7,13 +8,14 @@ from slack import WebClient
 from slack.errors import SlackApiError
 from slackeventsapi import SlackEventAdapter
 from airtable_util import fetch_phrases, create_record, delete_record
+from keys import SLACK_SIGNING_SECRET, SLACK_BOT_TOKEN
 
 #instantiate app
 app = Flask(__name__)
 
 events_adapter = SlackEventAdapter(
-    os.environ['SLACK_SIGNING_SECRET'], endpoint='/events', server=app)
-client = WebClient(os.environ['BOT_TOKEN'])
+    SLACK_SIGNING_SECRET, endpoint='/events', server=app)
+client = WebClient(SLACK_BOT_TOKEN)
 
 def send_message(id, message):
   try:
@@ -81,4 +83,5 @@ def delete_phrase():
 def test():
   return Response('App is running -- test out the functionality within Slack!')
 
-  
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')

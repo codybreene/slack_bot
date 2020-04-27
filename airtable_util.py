@@ -1,8 +1,9 @@
 import os
 from airtable import Airtable
+from keys import AIRTABLE_API_KEY, AIRTABLE_BASE_KEY
 
 #Airtable is auto authenticated when you have AIRTABLE_API_KEY set in env
-airtable_client = Airtable(os.environ['BASE_KEY'], 'watch_phrases')
+airtable_client = Airtable(AIRTABLE_BASE_KEY, 'watch_phrases')
 
 #get all phrases
 def fetch_phrases():
