@@ -3,7 +3,7 @@ from airtable import Airtable
 from keys import AIRTABLE_API_KEY, AIRTABLE_BASE_KEY
 
 #Airtable is auto authenticated when you have AIRTABLE_API_KEY set in env
-airtable_client = Airtable(AIRTABLE_BASE_KEY, 'watch_phrases')
+airtable_client = Airtable(AIRTABLE_BASE_KEY, 'watch_phrases', api_key=AIRTABLE_API_KEY)
 
 #get all phrases
 def fetch_phrases():
