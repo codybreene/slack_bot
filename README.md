@@ -41,7 +41,8 @@ Congrats! You've configured the slash commands to add and remove watch phrases.
 4. Copy the 'Bot User OAuth Access Token' for later
 5. Scroll down to 'Scopes'
 6. Under 'Bot Token Scopes', click 'Add an OAuth Scope'
-7. Add the following additional bot scopes: im:write, channels:history
+7. Add the following bot scopes: 
+![image](https://user-images.githubusercontent.com/5722230/80341748-da850f00-8817-11ea-9f5f-16f600c5f770.png)
 8. Re-install your app:
 ![image](https://user-images.githubusercontent.com/5722230/80339123-d276a080-8812-11ea-9e78-d30dd2fdd5af.png)
 
@@ -82,8 +83,11 @@ AIRTABLE_API_KEY=key54bic9Lngk71On
 
 #### Test it out!
 1. Open up the slack workspace
-2. Type some test messages
-3. Type some slash commands `/add_phrase` and `/delete_phrase`
+2. Click on a channel where you'd like to test the bot
+3. Click 'Add an App' right below the channel description
+4. You should see your app -- add it!
+5. Type some test messages
+6. Type some slash commands `/add_phrase` and `/delete_phrase`
 
 ## Technologies
 * Flask
